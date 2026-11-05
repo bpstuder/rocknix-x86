@@ -65,7 +65,7 @@ addon() {
     cp $(get_install_dir xdg-dbus-proxy)/usr/bin/xdg-dbus-proxy ${dest}/bin
 
     for f in bwrap flatpak flatpak-portal flatpak-session-helper fusermount3 xdg-dbus-proxy; do
-      patchelf --add-rpath '${ORIGIN}/../lib.private' ${dest}/bin/$f
+      patchelf --add-rpath '${ORIGIN}/../lib.private' ${dest}/bin/${f}
     done
 
   mkdir -p ${dest}/lib.private
