@@ -10,7 +10,7 @@ PKG_SITE="https://github.com/rockchip-linux/rkbin"
 PKG_URL="https://github.com/rockchip-linux/rkbin/archive/${PKG_VERSION}.tar.gz"
 PKG_LONGDESC="rkbin: Rockchip Firmware and Tool Binaries"
 PKG_TOOLCHAIN="manual"
-PKG_STAMP="$UBOOT_SYSTEM"
+PKG_STAMP="${UBOOT_SYSTEM}"
 
 post_unpack() {
   cp -a "${PKG_BUILD}/RKBOOT/RK3566MINIALL.ini" "${PKG_BUILD}/RKBOOT/RK356XMINIALL.ini"
