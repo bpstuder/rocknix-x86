@@ -17,7 +17,7 @@ if [ "${OPENGLES_SUPPORT}" = yes ]; then
 fi
 
 if [ "${TARGET_ARCH}" = "x86_64" ]; then
-  PKG_DEPENDS_TARGET+=" vitaquake3-lr boom3-lr"
+  PKG_DEPENDS_TARGET+=" vitaquake3-lr"
 fi
 
 makeinstall_target() {
