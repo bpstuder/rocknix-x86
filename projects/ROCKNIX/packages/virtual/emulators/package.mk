@@ -22,7 +22,7 @@ LIBRETRO_CORES="81-lr a5200-lr arduous-lr atari800-lr b2-lr beetle-gba-lr beetle
                 freeintv-lr freej2me-lr fuse-lr gambatte-lr gearboy-lr gearcoleco-lr geargrafx-lr gearlynx-lr gearsystem-lr \
                 geolith-lr genesis-plus-gx-lr genesis-plus-gx-wide-lr gw-lr handy-lr hatari-lr idtech-lr jaxe-lr mame-lr                \
                 mame2003-plus-lr mame2010-lr mame2015-lr melonds-lr melonds-ds-lr mesen-lr mesen-s-lr mgba-lr minivmac-lr mojozork-lr   \
-                mu-lr mupen64plus-nx-lr neocd_lr nestopia-lr np2kai-lr o2em-lr opera-lr parallel-n64-lr pcsx_rearmed-lr  \
+                mu-lr mupen64plus-nx-lr neocd_lr nestopia-lr np2kai-lr o2em-lr opera-lr pcsx_rearmed-lr  \
                 picodrive-lr pokemini-lr potator-lr prboom-lr prosystem-lr puae-lr puae2021-lr px68k-lr quasi88-lr quicknes-lr race-lr  \
                 same_cdi-lr sameboy-lr sameduck-lr scummvm-lr skyemu-lr smsplus-gx-lr snes9x-lr snes9x2002-lr snes9x2005_plus-lr        \
                 snes9x2010-lr stella-lr supersnes9x-lr swanstation-lr tgbdual-lr theodore-lr tic80-lr uzem-lr vba-next-lr       \
@@ -918,7 +918,7 @@ makeinstall_target() {
     # This core only has gles renderer
     add_emu_core n64 retroarch mupen64plus false
   fi
-  add_emu_core n64 retroarch parallel_n64 false
+  case "${DEVICE}" in AMD64) ;; *) add_emu_core n64 retroarch parallel_n64 false ;; esac
   add_emu_core n64 mupen64plus mupen64plus-sa false
   case ${DEVICE} in
     SM4450|SM8250|SDM845)
@@ -940,7 +940,7 @@ makeinstall_target() {
 
   ### Nintendo 64 Disk Drive
   add_emu_core n64dd retroarch mupen64plus_next true
-  add_emu_core n64dd retroarch parallel_n64 false
+  case "${DEVICE}" in AMD64) ;; *) add_emu_core n64dd retroarch parallel_n64 false ;; esac
   add_emu_core n64dd mupen64plus mupen64plus-sa false
   case ${DEVICE} in
     SM8550|SM8650|SM8750|AMD64)
