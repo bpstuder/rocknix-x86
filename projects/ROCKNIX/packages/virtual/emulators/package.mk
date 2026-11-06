@@ -191,10 +191,6 @@ makeinstall_target() {
       add_emu_core amiga retroarch puae2021 false
     ;;
   esac
-  case "${DEVICE}" in
-    AMD64) ;;
-    *) add_emu_core amiga amiberry amiberry false ;;
-  esac
   add_es_system amiga
 
   ### Commodore Amiga CD32
