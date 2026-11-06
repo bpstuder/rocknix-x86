@@ -8,7 +8,7 @@ PKG_SECTION="emulation" # Do not change to virtual or makeinstall_target will no
 PKG_LONGDESC="Emulation metapackage."
 PKG_TOOLCHAIN="manual"
 
-PKG_EMUS="amiberry duckstation-sa flycast-sa gzdoom-sa hatarisa hypseus-singe moonlight mupen64plus-sa openbor pico-8   \
+PKG_EMUS="duckstation-sa flycast-sa gzdoom-sa hatarisa hypseus-singe moonlight mupen64plus-sa openbor pico-8   \
           ppsspp-sa scummvm-sa touchhle-sa vice-sa wine yabasanshiro-pirry-sa"
 
 EMUS_32BIT=""
@@ -191,7 +191,10 @@ makeinstall_target() {
       add_emu_core amiga retroarch puae2021 false
     ;;
   esac
-  add_emu_core amiga amiberry amiberry false
+  case "${DEVICE}" in
+    AMD64) ;;
+    *) add_emu_core amiga amiberry amiberry false ;;
+  esac
   add_es_system amiga
 
   ### Commodore Amiga CD32
