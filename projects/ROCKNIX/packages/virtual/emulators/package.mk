@@ -93,7 +93,7 @@ case "${DEVICE}" in
     LIBRETRO_CORES+=" beetle-psx-lr beetle-saturn-lr bsnes-lr bsnes-hd-lr dolphin-lr uae4arm-lr"
     ;;
   AMD64)
-    PKG_EMUS+=" ares-sa azahar-sa cemu-sa dolphin-sa gopher64-sa mednafen melonds-sa nanoboyadvance-sa \
+    PKG_EMUS+=" ares-sa cemu-sa dolphin-sa gopher64-sa mednafen melonds-sa nanoboyadvance-sa \
                 xemu-sa skyemu-sa vita3k-sa"
     LIBRETRO_CORES+=" beetle-psx-lr beetle-saturn-lr bsnes-lr bsnes-hd-lr dolphin-lr"
 esac
@@ -172,7 +172,7 @@ makeinstall_target() {
 
   ### Nintendo 3DS
   case ${DEVICE} in
-    RK3576|RK3566|SM8250|SM8550|SM8650|SM8750|S922X|RK3588|SM4450|SM6115|AMD64|SDM845)
+    RK3576|RK3566|SM8250|SM8550|SM8650|SM8750|S922X|RK3588|SM4450|SM6115|SDM845)
       add_emu_core 3ds azahar azahar-sa true
       add_es_system 3ds
       install_script "Start Azahar.sh"
